@@ -26,6 +26,12 @@ python model/build_preview.py
 
 `build_preview.py` also rebuilds `docs/`, which GitHub Pages serves.
 
+To rebuild everything and push it live in one step (Windows PowerShell):
+
+```powershell
+.\publish.ps1 "What changed"
+```
+
 ---
 
 Adapted from Media Tech Fundamentals at Caldwell High School by Chad Lawson.  Adobe, Creative Cloud, Photoshop, Illustrator and Premiere Pro are trademarks of Adobe Inc.; this resource is not affiliated with or endorsed by Adobe.
