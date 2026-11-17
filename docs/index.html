@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adobe Resource Library</title>
+<meta name="description" content="A retro-future flight manual for teachers new to Adobe Creative Cloud.">
+<link rel="icon" href="theme/mascot.svg" type="image/svg+xml">
+<style>
+  :root { --navy:#070B1E; --panel:#1B1B2F; --chrome:#C0C7D1; --cream:#F5E9C8; --yellow:#FFD54A; --teal:#3DDBD9; --red:#E63946; }
+  body { margin:0; font-family:"Trebuchet MS", Arial, sans-serif; color:var(--cream); line-height:1.5;
+         background:var(--navy) url("theme/space-bg.svg") repeat; }
+  header { background:linear-gradient(180deg,#232848 0%,#121633 100%); border-bottom:5px ridge var(--chrome); }
+  .head-in { max-width:1600px; margin:0 auto; padding:18px 24px 12px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .badge { width:54px; height:54px; border-radius:50%; flex:0 0 54px; border:4px ridge var(--chrome);
+           background:radial-gradient(circle at 35% 35%,#FFC857,#F26B3A 60%,#8E1F2F); box-shadow:0 0 18px rgba(255,200,87,.45); }
+  header h1 { margin:0; font-family:Futura,"Century Gothic","Trebuchet MS",sans-serif; font-size:1.7em; letter-spacing:4px;
+              text-transform:uppercase; color:var(--yellow); text-shadow:0 0 12px rgba(255,213,74,.35); }
+  header p { margin:2px 0 0 0; color:var(--teal); font-family:"Courier New",monospace; font-size:.9em; letter-spacing:2px; text-transform:uppercase; }
+  .strip { display:block; width:100%; max-width:1600px; margin:0 auto; height:auto; padding:0 24px 12px; box-sizing:border-box; }
+  .wrap { display:flex; gap:28px; max-width:1600px; margin:0 auto; padding:24px; box-sizing:border-box; }
+  nav { flex:0 0 270px; position:sticky; top:18px; align-self:flex-start; background:var(--panel);
+        border:5px ridge var(--chrome); border-radius:18px; padding:16px 14px; box-shadow:0 0 30px rgba(61,219,217,.15); }
+  nav .log { margin:0 0 12px 4px; font-family:"Courier New",monospace; color:#FFC857; letter-spacing:3px; font-weight:700; }
+  nav ol { list-style:none; padding:0; margin:0; counter-reset:m; }
+  nav li { counter-increment:m; margin-bottom:10px; }
+  nav a { display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--cream); background:#0B1026;
+          border:2px solid #34406A; border-radius:12px; padding:10px 12px; font-size:.92em; line-height:1.25; transition:all .15s; }
+  nav a::before { content:counter(m, decimal-leading-zero); font-family:"Courier New",monospace; font-weight:700; color:var(--navy);
+                  background:var(--yellow); border-radius:6px; padding:2px 6px; flex:0 0 auto; }
+  nav a::after { content:""; width:9px; height:9px; border-radius:50%; margin-left:auto; flex:0 0 9px; background:#39FF88;
+                 box-shadow:0 0 8px #39FF88; animation:blink 1.6s steps(1) infinite; }
+  nav li:nth-child(2) a::after { background:#FFB000; box-shadow:0 0 8px #FFB000; animation-duration:1.1s; }
+  nav li:nth-child(3) a::after { background:#FF3B3B; box-shadow:0 0 8px #FF3B3B; animation-duration:2.2s; }
+  nav li:nth-child(4) a::after { background:var(--teal); box-shadow:0 0 8px var(--teal); animation-duration:1.4s; }
+  nav li:nth-child(5) a::after { background:#FFE66D; box-shadow:0 0 8px #FFE66D; animation-duration:1.8s; }
+  nav a:hover, nav a:focus-visible { border-color:var(--teal); background:#14204A; box-shadow:0 0 12px rgba(61,219,217,.5); outline:none; }
+  @keyframes blink { 0%,49% {opacity:1} 50%,100% {opacity:.2} }
+  main { flex:1; min-width:0; }
+  .page { margin-bottom:40px; overflow-x:auto; scroll-margin-top:18px; }
+  .page:not(.themed) { background:#FFFFFF; color:#1F2933; border-radius:12px; padding:8px 24px 24px; }
+  .file { font-family:"Courier New",monospace; font-size:.78em; color:var(--teal); opacity:.75; margin:0 0 8px 6px; letter-spacing:1px; }
+  .file::before { content:"B8  TRANSMISSION: "; }
+  code { background:#F3F4F6; color:#1B1B2F; padding:1px 4px; border-radius:3px; }
+  footer { text-align:center; padding:10px 0 34px; font-family:"Courier New",monospace; color:var(--teal); letter-spacing:4px; opacity:.8; }
+  @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+  @media (max-width: 860px) {
+    .wrap { flex-direction:column; padding:16px; }
+    nav { position:static; flex:none; }
+    .head-in { padding:14px 16px 10px; } .strip { padding:0 16px 10px; }
+    header h1 { font-size:1.3em; letter-spacing:2px; }
+  }
+
+  .home { font-family:"Courier New",monospace; color:#0B1026; background:#FFD54A; text-decoration:none;
+          border-radius:999px; padding:6px 14px; font-weight:700; letter-spacing:1px; border:3px ridge #C0C7D1; }
+  .home:hover, .home:focus-visible { background:#3DDBD9; outline:none; }
+  .hero { max-width:1600px; margin:0 auto; padding:24px; box-sizing:border-box; }
+  .skip { display:flex; align-items:center; gap:0; max-width:980px; margin:8px auto 28px; }
+  .skip img { width:150px; flex:0 0 150px; }
+  .tail { width:0; height:0; border-top:14px solid transparent; border-bottom:14px solid transparent; border-right:20px solid #FFF; }
+  .bubble { background:#FFF; color:#1B1B2F; border-radius:22px; padding:16px 22px; border-bottom:5px solid #FFD54A; font-size:1.15em; }
+  .bubble b { display:block; font-family:"Courier New",monospace; color:#9E1B2A; font-size:.75em; letter-spacing:2px; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:24px; }
+  .tile { display:block; text-decoration:none; color:#F5E9C8; background:#1B1B2F; border:5px ridge #C0C7D1; border-radius:20px;
+          overflow:hidden; transition:transform .15s, box-shadow .15s; }
+  .tile:hover, .tile:focus-visible { transform:translateY(-4px); box-shadow:0 0 28px rgba(61,219,217,.55); outline:none; }
+  .tile img { display:block; width:100%; height:auto; }
+  .tile .in { padding:14px 18px 18px; }
+  .tile h2 { margin:0 0 6px; font-family:Futura,"Century Gothic","Trebuchet MS",sans-serif; color:#FFD54A; letter-spacing:2px; }
+  .tile p { margin:0 0 8px; }
+  .tile .go { font-family:"Courier New",monospace; color:#3DDBD9; letter-spacing:2px; }
+  .soon { display:flex; flex-direction:column; justify-content:center; min-height:180px; border-style:dashed; opacity:.75; cursor:default; }
+  .soon:hover { transform:none; box-shadow:none; }
+  .soon .in { text-align:center; }
+  @media (max-width: 860px) { .tiles { grid-template-columns:1fr; } .skip img { width:96px; flex-basis:96px; } .hero { padding:16px; } }
+</style></head>
+<body>
+<header><div class="head-in"><div class="badge" aria-hidden="true"></div><div>
+<h1>Adobe Resource Library</h1>
+<p>A flight manual for teachers new to Adobe Creative Cloud</p></div></div>
+<img class="strip" src="theme/lights-strip.svg" alt=""></header>
+<div class="hero">
+<div class="skip"><img src="theme/mascot.svg" alt="Commander Skip, a 1950s spaceman in a glass bubble helmet">
+<div class="tail"></div><div class="bubble"><b>COMMANDER SKIP SAYS:</b>Hey there, sport!  Brand new to Adobe, or just need a hand
+mid-lesson?  Pick a module and blast off.  Every page has Mission Checks to make sure it stuck.</div></div>
+<div class="tiles"><a class="tile" href="getting-started/"><img src="theme/banner-getting-started.svg" alt=""><div class="in"><h2>GETTING STARTED</h2><p>Day one and day two: every kid signed in, organized, sharing files, and emailing like a pro.</p><p class="go">&#9656; 5 PAGES &middot; LAUNCH</p></div></a><a class="tile" href="photoshop/"><img src="theme/banner-photoshop.svg" alt=""><div class="in"><h2><img src="theme/badge-photoshop.svg" alt="" style="width:44px;height:auto;vertical-align:middle;margin-right:10px;display:inline;">PHOTOSHOP</h2><p>Five ideas, one rule, four missions, and a help desk for when it's doing a thing.</p><p class="go">&#9656; 5 PAGES &middot; LAUNCH</p></div></a><div class="tile soon"><div class="in"><h2>&#127912; ILLUSTRATOR</h2><p>Shapes, color, and the Pen tool.</p><p class="go">COMING SOON</p></div></div><div class="tile soon"><div class="in"><h2>&#127909; PREMIERE PRO</h2><p>Cutting, sound, titles, export.</p><p class="go">COMING SOON</p></div></div><div class="tile soon"><div class="in"><h2>&#11088; BEST PRACTICES</h2><p>The two-week cycle, choice, feedback, AI.</p><p class="go">COMING SOON</p></div></div><div class="tile soon"><div class="in"><h2>&#127891; CERTIFICATION PREP</h2><p>Adobe Certified Professional, mapped to the missions.</p><p class="go">COMING SOON</p></div></div><div class="tile soon"><div class="in"><h2>&#128301; EXTENDED RESOURCES</h2><p>Graphic design, media arts, digital literacy.</p><p class="go">COMING SOON</p></div></div></div>
+</div>
+<footer>&#9733; BUILT BY A TEACHER, FOR TEACHERS &#9733;<br><span style="font-size:.75em;letter-spacing:0;opacity:.8;">Adobe, Creative Cloud, Photoshop, Illustrator and Premiere Pro are trademarks of Adobe Inc.  This resource is not affiliated with or endorsed by Adobe.</span></footer>
+</body></html>

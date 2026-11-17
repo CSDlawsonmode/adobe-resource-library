@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 124" width="124" height="124" role="img" aria-label="Photoshop module badge: three stacked layers">
+<style>
+@keyframes blink { 0%,49% {opacity:1} 50%,100% {opacity:.18} }
+@keyframes tw { 0%,100% {opacity:.25} 50% {opacity:1} }
+@keyframes spin { to { transform: rotate(360deg) } }
+@keyframes bob { 0%,100% {transform: translateY(0)} 50% {transform: translateY(-7px)} }
+@keyframes flick { 0% {opacity:1} 100% {opacity:.55} }
+@keyframes fly { 0% {transform: translateX(-140px)} 100% {transform: translateX(1140px)} }
+@keyframes scope { to { transform: translateX(-60px) } }
+.d { animation: blink 1.6s steps(1) infinite }
+.tw { animation: tw 3.2s ease-in-out infinite }
+.spin { transform-box: view-box; animation: spin 5s linear infinite }
+.bob { animation: bob 4s ease-in-out infinite }
+.flame { animation: flick .45s ease-in-out infinite alternate }
+.fly { animation: fly 22s linear infinite }
+.scope { animation: scope 1.8s linear infinite }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+@keyframes lift { 0%,100% {transform:translateY(0)} 50% {transform:translateY(-4px)} } .lift { animation: lift 3s ease-in-out infinite }</style>
+<defs><linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#9AA4B1"/><stop offset="1" stop-color="#E3E7EC"/></linearGradient></defs>
+<circle cx="62" cy="62" r="56" fill="#0B1026" stroke="url(#chrome)" stroke-width="8"/>
+<circle cx="62" cy="62" r="45" fill="none" stroke="#3DDBD9" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M30,80 L66,66 L94,80 L58,94 Z" fill="#E63946" stroke="#0B1026" stroke-width="3" stroke-linejoin="round"/><path d="M30,66 L66,52 L94,66 L58,80 Z" fill="#FFD54A" stroke="#0B1026" stroke-width="3" stroke-linejoin="round"/><g class="lift"><path d="M30,52 L66,38 L94,52 L58,66 Z" fill="#3DDBD9" stroke="#0B1026" stroke-width="3" stroke-linejoin="round"/></g>
+<circle class="d" cx="62" cy="14" r="3.5" fill="#39FF88" style="animation-duration:1.5s"/>
+</svg>

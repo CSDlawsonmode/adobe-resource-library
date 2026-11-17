@@ -1,0 +1,16 @@
+# Private: contract and planning notes stay on this computer
+Adobe Resource Library SOW 26-27.pdf
+PLAN.md
+*.pdf
+
+# Generated local previews (the public copies live in docs/)
+model/**/preview.html
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+Thumbs.db
+.DS_Store
+~$*
